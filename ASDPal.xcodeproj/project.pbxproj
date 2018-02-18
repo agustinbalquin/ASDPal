@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		42FE437B20383816006076B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE437A20383816006076B3 /* AppDelegate.swift */; };
-		42FE437D20383816006076B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE437C20383816006076B3 /* ViewController.swift */; };
 		42FE438020383816006076B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FE437E20383816006076B3 /* Main.storyboard */; };
 		42FE438320383816006076B3 /* ASDPal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42FE438120383816006076B3 /* ASDPal.xcdatamodeld */; };
 		42FE438520383816006076B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42FE438420383816006076B3 /* Assets.xcassets */; };
 		42FE438820383816006076B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FE438620383816006076B3 /* LaunchScreen.storyboard */; };
+		42FE4390203910B3006076B3 /* EmergencyContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE438F203910B3006076B3 /* EmergencyContactsViewController.swift */; };
+		42FE439220391287006076B3 /* EmergencyContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE439120391287006076B3 /* EmergencyContactsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		42FE437720383816006076B3 /* ASDPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ASDPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FE437A20383816006076B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		42FE437C20383816006076B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		42FE437F20383816006076B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42FE438220383816006076B3 /* ASDPal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ASDPal.xcdatamodel; sourceTree = "<group>"; };
 		42FE438420383816006076B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42FE438720383816006076B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42FE438920383816006076B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42FE438F203910B3006076B3 /* EmergencyContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyContactsViewController.swift; sourceTree = "<group>"; };
+		42FE439120391287006076B3 /* EmergencyContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyContactsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				42FE437A20383816006076B3 /* AppDelegate.swift */,
-				42FE437C20383816006076B3 /* ViewController.swift */,
+				42FE438F203910B3006076B3 /* EmergencyContactsViewController.swift */,
 				42FE437E20383816006076B3 /* Main.storyboard */,
 				42FE438420383816006076B3 /* Assets.xcassets */,
 				42FE438620383816006076B3 /* LaunchScreen.storyboard */,
 				42FE438920383816006076B3 /* Info.plist */,
 				42FE438120383816006076B3 /* ASDPal.xcdatamodeld */,
+				42FE439120391287006076B3 /* EmergencyContactsTableViewCell.swift */,
 			);
 			path = ASDPal;
 			sourceTree = "<group>";
@@ -140,8 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42FE437D20383816006076B3 /* ViewController.swift in Sources */,
+				42FE439220391287006076B3 /* EmergencyContactsTableViewCell.swift in Sources */,
 				42FE437B20383816006076B3 /* AppDelegate.swift in Sources */,
+				42FE4390203910B3006076B3 /* EmergencyContactsViewController.swift in Sources */,
 				42FE438320383816006076B3 /* ASDPal.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
