@@ -1,0 +1,6 @@
+framework module Pods_ASDPal {
+  umbrella header "Pods-ASDPal-umbrella.h"
+
+  export *
+  module * { export * }
+}
