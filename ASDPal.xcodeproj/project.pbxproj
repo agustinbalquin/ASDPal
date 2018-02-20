@@ -70,17 +70,33 @@
 			isa = PBXGroup;
 			children = (
 				42FE437A20383816006076B3 /* AppDelegate.swift */,
-				42FE438F203910B3006076B3 /* EmergencyContactsViewController.swift */,
-				42FE4395203C0A97006076B3 /* MediaViewController.swift */,
+				42FE439B203C23D9006076B3 /* View Controllers */,
 				42FE437E20383816006076B3 /* Main.storyboard */,
 				42FE438420383816006076B3 /* Assets.xcassets */,
 				42FE438620383816006076B3 /* LaunchScreen.storyboard */,
 				42FE438920383816006076B3 /* Info.plist */,
 				42FE438120383816006076B3 /* ASDPal.xcdatamodeld */,
+				42FE439D203C2473006076B3 /* Views */,
+			);
+			path = ASDPal;
+			sourceTree = "<group>";
+		};
+		42FE439B203C23D9006076B3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				42FE438F203910B3006076B3 /* EmergencyContactsViewController.swift */,
+				42FE4395203C0A97006076B3 /* MediaViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		42FE439D203C2473006076B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				42FE439120391287006076B3 /* EmergencyContactsTableViewCell.swift */,
 				42FE4399203C12D6006076B3 /* MediaCollectionViewCell.swift */,
 			);
-			path = ASDPal;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		CBDD5BB3674995DB137D1231 /* Frameworks */ = {
