@@ -14,6 +14,8 @@
 		42FE438820383816006076B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FE438620383816006076B3 /* LaunchScreen.storyboard */; };
 		42FE4390203910B3006076B3 /* EmergencyContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE438F203910B3006076B3 /* EmergencyContactsViewController.swift */; };
 		42FE439220391287006076B3 /* EmergencyContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE439120391287006076B3 /* EmergencyContactsTableViewCell.swift */; };
+		42FE4396203C0A97006076B3 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE4395203C0A97006076B3 /* MediaViewController.swift */; };
+		42FE439A203C12D6006076B3 /* MediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE4399203C12D6006076B3 /* MediaCollectionViewCell.swift */; };
 		7095A1C947FE08EEC71B8782 /* Pods_ASDPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5C9510037A9859EDAB8529 /* Pods_ASDPal.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		42FE438920383816006076B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42FE438F203910B3006076B3 /* EmergencyContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyContactsViewController.swift; sourceTree = "<group>"; };
 		42FE439120391287006076B3 /* EmergencyContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyContactsTableViewCell.swift; sourceTree = "<group>"; };
+		42FE4395203C0A97006076B3 /* MediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
+		42FE4399203C12D6006076B3 /* MediaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		5EC73C88F50815B9E69821A1 /* Pods-ASDPal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASDPal.release.xcconfig"; path = "Pods/Target Support Files/Pods-ASDPal/Pods-ASDPal.release.xcconfig"; sourceTree = "<group>"; };
 		6A5C9510037A9859EDAB8529 /* Pods_ASDPal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ASDPal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B28BFFB4EB9736DB1FD7219 /* Pods-ASDPal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASDPal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ASDPal/Pods-ASDPal.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,12 +71,14 @@
 			children = (
 				42FE437A20383816006076B3 /* AppDelegate.swift */,
 				42FE438F203910B3006076B3 /* EmergencyContactsViewController.swift */,
+				42FE4395203C0A97006076B3 /* MediaViewController.swift */,
 				42FE437E20383816006076B3 /* Main.storyboard */,
 				42FE438420383816006076B3 /* Assets.xcassets */,
 				42FE438620383816006076B3 /* LaunchScreen.storyboard */,
 				42FE438920383816006076B3 /* Info.plist */,
 				42FE438120383816006076B3 /* ASDPal.xcdatamodeld */,
 				42FE439120391287006076B3 /* EmergencyContactsTableViewCell.swift */,
+				42FE4399203C12D6006076B3 /* MediaCollectionViewCell.swift */,
 			);
 			path = ASDPal;
 			sourceTree = "<group>";
@@ -225,6 +231,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				42FE439220391287006076B3 /* EmergencyContactsTableViewCell.swift in Sources */,
+				42FE439A203C12D6006076B3 /* MediaCollectionViewCell.swift in Sources */,
+				42FE4396203C0A97006076B3 /* MediaViewController.swift in Sources */,
 				42FE437B20383816006076B3 /* AppDelegate.swift in Sources */,
 				42FE4390203910B3006076B3 /* EmergencyContactsViewController.swift in Sources */,
 				42FE438320383816006076B3 /* ASDPal.xcdatamodeld in Sources */,
@@ -391,6 +399,7 @@
 				42FE438E20383816006076B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -41,9 +41,16 @@
                                 <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
-                                    <segue destination="4jN-fa-tcO" kind="show" id="xMb-48-g3m"/>
+                                    <segue destination="4jN-fa-tcO" kind="modal" id="xMb-48-g3m"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ASDPal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKs-l4-flZ">
+                                <rect key="frame" x="83" y="126" width="209" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -55,7 +62,7 @@
         <!--Emergency Contacts-->
         <scene sceneID="t4U-Wn-1as">
             <objects>
-                <viewController id="AcF-Ow-6Wk" customClass="EmergencyContactsViewController" customModule="ASDPal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AcF-Ow-6Wk" customClass="EmergencyContactsViewController" customModule="ASDPal" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zsb-WU-HEf"/>
                         <viewControllerLayoutGuide type="bottom" id="pKY-DQ-nqo"/>
@@ -155,7 +162,7 @@
         <!--Media-->
         <scene sceneID="nnD-Fs-eR5">
             <objects>
-                <viewController id="h0C-Sg-ZEK" sceneMemberID="viewController">
+                <viewController id="h0C-Sg-ZEK" customClass="MediaViewController" customModule="ASDPal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PpO-U9-6Lt"/>
                         <viewControllerLayoutGuide type="bottom" id="r4R-xp-m5F"/>
@@ -169,17 +176,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="m2z-AV-gYb">
-                                    <size key="itemSize" width="104" height="104"/>
+                                    <size key="itemSize" width="160" height="160"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="18" minY="18" maxX="18" maxY="18"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="B2k-t1-rKo">
-                                        <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ASDPalMediaCell" id="B2k-t1-rKo" customClass="MediaCollectionViewCell" customModule="ASDPal" customModuleProvider="target">
+                                        <rect key="frame" x="18" y="18" width="160" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
                                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -190,6 +197,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Media" id="uHr-Aq-cFd"/>
+                    <connections>
+                        <outlet property="collectionView" destination="gQj-jH-akD" id="XK7-fk-zEc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QnK-yc-8b3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
