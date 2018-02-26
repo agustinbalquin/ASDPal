@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Persisting User
         if PFUser.current() != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "tabID") as! UIViewController
+            let vc = storyboard.instantiateViewController(withIdentifier: "tabID") 
             window?.rootViewController = vc
         }
         
