@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class LogInViewController: UIViewController {
 
@@ -26,8 +27,67 @@ class LogInViewController: UIViewController {
     
     @IBAction func logUserIn(_ sender: Any) {
         // Perform request
-        let username = usernameTextField.text? ?? "";
-        let password = passwordTextField.text? ?? "";
-    
+        let username = usernameTextField.text ?? "";
+        let password = passwordTextField.text ?? "";
+        
+        print("username: ",username)
+        print("password: ", password)
+        PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
+            
+            if error != nil {
+                
+                let alertController = UIAlertController(title: "Error", message: "Username/Password is incorrect", preferredStyle: .alert)
+                
+                // create an OK action
+                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                    // handle response here.
+                }
+                // add the OK action to the alert controller
+                alertController.addAction(OKAction)
+                
+                self.present(alertController, animated: true) {
+                    
+                }
+            }
+            else {
+                print("User logged in successfully")
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            }
+        }
     }
+    
+    
+    @IBAction func registerUser(_ sender: Any) {
+        let newUser = PFUser()
+        newUser.username = usernameTextField.text
+        newUser.password = passwordTextField.text
+        
+        if usernameTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
+            let alertController = UIAlertController(title: "Error", message: "Username/Password is empty", preferredStyle: .alert)
+            
+            // create an OK action
+            let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                // handle response here.
+            }
+            alertController.addAction(OKAction)
+            
+            present(alertController, animated: true) {
+                
+            }
+        }
+
+        newUser.signUpInBackground { (success: Bool, error: Error?) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                let alertController = UIAlertController(title: "Success", message: "User registered successfully", preferredStyle: .alert)
+                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in }
+                alertController.addAction(OKAction)
+                self.present(alertController, animated: true) { }
+            }
+        }
+        
+    }
+    
+    
 }
