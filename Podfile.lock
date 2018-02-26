@@ -1,12 +1,18 @@
 PODS:
+  - Bolts/Tasks (1.8.4)
   - MobilePlayer (1.2.0)
+  - Parse (1.15.3):
+    - Bolts/Tasks (~> 1.8)
 
 DEPENDENCIES:
   - MobilePlayer
+  - Parse
 
 SPEC CHECKSUMS:
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   MobilePlayer: 069b13482499f14c25b6ce53f63a91e17975b073
+  Parse: cdc0f1f975ee8be0409e66f21b05df4ae067047c
 
-PODFILE CHECKSUM: 9d76a8ce7923316fa20ef61513223671874c999a
+PODFILE CHECKSUM: 3476bdb523c12cc8597855867146e51e0843adb3
 
 COCOAPODS: 1.3.1

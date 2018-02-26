@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Parse.initialize(
+            with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
+                configuration.applicationId = "asdpal"
+                configuration.clientKey = nil  // set to nil assuming you have not set clientKey
+                configuration.server = "http://asdpal.herokuapp.com/parse"
+            })
+        )
+
+        
         return true
     }
 

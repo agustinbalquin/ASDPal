@@ -7,4 +7,6 @@ target 'ASDPal' do
 
   # Pods for ASDPal
   pod "MobilePlayer"
+  pod "Parse"
+
 end

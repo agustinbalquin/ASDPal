@@ -4,12 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MobilePlayer-MobilePlayer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>MobilePlayer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1BED06146478AD95ED5561A5C40662B0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>362E95B816068454C1FA5DD3CA791372</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>3FD8DDB4E32851048D10BEF25BE87608</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4F049F3B1D5E824FB22D2236E0DB3604</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>AD666190D4145AC9FE643913F908B928</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F957EABCA56BD8F5B626798CC7B344D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
