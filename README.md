@@ -4,11 +4,11 @@
 
 ## User Stories
 
-- [] User can LogIn/Logout with their account
+- [x] User can LogIn/Logout with their account
 - [] User has a customizable list of emergency contacts
 - [] User can call/message individual contacts
-- [] User can press "Help" button to inform all contacts with user's current location
-- [] User can play audio/video from a select list of personal media library
+- [x] User can press "Help" button to inform all contacts with user's current location
+- [x] User can play audio/video from a select list of personal media library
 
 ## Video Walkthrough
 
@@ -28,7 +28,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 ## License
 
-    Copyright [2018] [Agustin Balquin]
+    Copyright [2018] [Agustin Balquin, Jerry Kong, Arneil Liban]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

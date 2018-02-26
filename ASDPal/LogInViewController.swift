@@ -64,6 +64,9 @@ class LogInViewController: UIViewController {
         }
     }
     
+    @IBAction func screenTapped(_ sender: Any) {
+        view.endEditing(true);
+    }
     
     @IBAction func registerUser(_ sender: Any) {
         let newUser = PFUser()
