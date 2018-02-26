@@ -14,10 +14,18 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        loginButton.layer.cornerRadius = loginButton.frame.size.height/2
+        loginButton.layer.borderWidth = 1
+        loginButton.layer.borderColor = UIColor.clear.cgColor
+        
+        registerButton.layer.cornerRadius = registerButton.frame.size.height/2
+        registerButton.layer.borderWidth = 1
+        registerButton.layer.borderColor = UIColor.clear.cgColor
+       
     }
 
     override func didReceiveMemoryWarning() {
