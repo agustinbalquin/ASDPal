@@ -9,14 +9,21 @@
 import UIKit
 import MediaPlayer
 
+@objc protocol MediaCollectionViewCellDelegate {
+    func playSong(mediaCell:MediaCollectionViewCell)
+}
+
 class MediaViewController: UIViewController, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     var results = [MPMediaItem]()
+    var resultsTest = [MPMediaItemCollection]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+         var delegate:MediaCollectionViewCellDelegate?
         
         collectionView.dataSource = self
         let status = MPMediaLibrary.authorizationStatus()
@@ -46,18 +53,23 @@ class MediaViewController: UIViewController, UICollectionViewDataSource {
             })
         } else{
             let query = MPMediaQuery.songs()
+            resultsTest = query.collections!
             results = (query.items)!
-            if #available(iOS 10.3, *) {
-                let myMediaPlayer = MPMusicPlayerApplicationController.applicationQueuePlayer()
-                myMediaPlayer.setQueue(with:query)
-                myMediaPlayer.play()
-            } else {
-                print("Version to o")
-            }
+            
         }
         print("results: ", results)
-
-        
+    }
+    
+    func playSong() {
+        if #available(iOS 10.3, *) {
+            let myPlayer = MPMusicPlayerController.applicationMusicPlayer()
+            myPlayer.setQueue(with: resultsTest[0])
+            myPlayer.play()
+        } else {
+            let alert = UIAlertController(title: "Cannot play songs", message: "iOS version needs update", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,11 +79,16 @@ class MediaViewController: UIViewController, UICollectionViewDataSource {
     //Collection View
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return results.count
+        return resultsTest.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ASDPalMediaCell", for: indexPath) as! MediaCollectionViewCell
+        let currentSong = resultsTest[indexPath.row]
+        cell.mediaLabel.text = currentSong.representativeItem?.title
+        if let artwork = currentSong.representativeItem?.value(forProperty: MPMediaItemPropertyArtwork) as? MPMediaItemArtwork{
+            cell.imageView.image = artwork.image(at: CGSize(width: 160, height: 160))
+        }
         return cell
     }
 }
