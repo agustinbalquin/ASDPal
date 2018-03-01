@@ -9,9 +9,7 @@
 import UIKit
 import MediaPlayer
 
-@objc protocol MediaCollectionViewCellDelegate {
-    func playSong(mediaCell:MediaCollectionViewCell)
-}
+
 
 class MediaViewController: UIViewController, UICollectionViewDataSource {
 
@@ -22,8 +20,6 @@ class MediaViewController: UIViewController, UICollectionViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-         var delegate:MediaCollectionViewCellDelegate?
         
         collectionView.dataSource = self
         let status = MPMediaLibrary.authorizationStatus()
@@ -60,10 +56,11 @@ class MediaViewController: UIViewController, UICollectionViewDataSource {
         print("results: ", results)
     }
     
-    func playSong() {
+    func playSongFromVC(song: MPMediaItemCollection?) {
+       
         if #available(iOS 10.3, *) {
             let myPlayer = MPMusicPlayerController.applicationMusicPlayer()
-            myPlayer.setQueue(with: resultsTest[0])
+            myPlayer.setQueue(with: song!)
             myPlayer.play()
         } else {
             let alert = UIAlertController(title: "Cannot play songs", message: "iOS version needs update", preferredStyle: .alert)
@@ -85,10 +82,19 @@ class MediaViewController: UIViewController, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ASDPalMediaCell", for: indexPath) as! MediaCollectionViewCell
         let currentSong = resultsTest[indexPath.row]
+        cell.delegate = self
+        cell.cellSong = currentSong
         cell.mediaLabel.text = currentSong.representativeItem?.title
         if let artwork = currentSong.representativeItem?.value(forProperty: MPMediaItemPropertyArtwork) as? MPMediaItemArtwork{
             cell.imageView.image = artwork.image(at: CGSize(width: 160, height: 160))
         }
         return cell
+    }
+}
+
+// MediaCollectionViewCellDelegate
+extension MediaViewController: MediaCollectionViewCellDelegate {
+    func playSong(mediaCell: MediaCollectionViewCell) {
+        playSongFromVC(song: mediaCell.cellSong)
     }
 }

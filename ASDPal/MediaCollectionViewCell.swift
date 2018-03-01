@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import MediaPlayer
+
+@objc protocol MediaCollectionViewCellDelegate {
+    func playSong(mediaCell:MediaCollectionViewCell)
+}
 
 class MediaCollectionViewCell: UICollectionViewCell {
     
@@ -14,4 +19,12 @@ class MediaCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var mediaLabel: UILabel!
     
+    var delegate:MediaCollectionViewCellDelegate?
+    
+    var cellSong: MPMediaItemCollection?
+    
+    @IBAction func songClick(_ sender: Any) {
+        delegate!.playSong(mediaCell: self)
+    }
+
 }
