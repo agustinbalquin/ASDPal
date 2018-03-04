@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Contacts
 
 class EmergencyContactsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var contactName: UILabel!
+    
+    var contact: CNContact?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
