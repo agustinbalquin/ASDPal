@@ -20,6 +20,8 @@ class EmergencyContactsViewController: UIViewController, UITableViewDelegate, UI
         }
     }
     
+    var demoArrays = [(name: "Mom", number: "5625063648"),(name: "Dad", number: "5625063648"), (name: "Big Sister", number: "5625063648"), (name: "Teacher", number: "5625063648"), (name: "Aunt Janine", number: "5625063648"), (name: "Steve -Neighbor", number: "5625063648")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,22 +36,29 @@ class EmergencyContactsViewController: UIViewController, UITableViewDelegate, UI
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cnContacts.count;
+        if !demoArrays.isEmpty {
+            return demoArrays.count
+        } else {
+            return cnContacts.count;
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "emergencyCell", for: indexPath) as! EmergencyContactsTableViewCell
         
         cell.delegate = self
-        
-        if !cnContacts.isEmpty {
-            let contact = cnContacts[indexPath.row]
-            cell.contact = contact
-            let fullName = CNContactFormatter.string(from: contact, style: .fullName) ?? "No Name"
-            cell.contactName.text = fullName
-            NSLog("\(fullName): \(contact.phoneNumbers.description)")
+        if !demoArrays.isEmpty {
+            cell.contactName.text = demoArrays[indexPath.row].name
         } else {
-            cell.contactName.text = "No Name"
+            if !cnContacts.isEmpty {
+                let contact = cnContacts[indexPath.row]
+                cell.contact = contact
+                let fullName = CNContactFormatter.string(from: contact, style: .fullName) ?? "No Name"
+                cell.contactName.text = fullName
+                NSLog("\(fullName): \(contact.phoneNumbers.description)")
+            } else {
+                cell.contactName.text = "No Name"
+            }
         }
         
         return cell

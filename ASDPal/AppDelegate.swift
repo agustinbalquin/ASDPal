@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -43,6 +42,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }, completion: { completed in })
             
         })
+        
+        // Set Default tabbar value to Home tab
+        if window?.rootViewController as? UITabBarController != nil {
+            let tabBarController = window!.rootViewController as! UITabBarController
+            tabBarController.selectedIndex = 1
+        }
         
         return true
     }
