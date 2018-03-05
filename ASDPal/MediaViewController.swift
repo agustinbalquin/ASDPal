@@ -17,6 +17,7 @@ class MediaViewController: UIViewController, UICollectionViewDataSource {
     
     var results = [MPMediaItem]()
     var resultsTest = [MPMediaItemCollection]()
+    var player = MPMusicPlayerController.applicationMusicPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,7 @@ class MediaViewController: UIViewController, UICollectionViewDataSource {
                         let myMediaPlayer = MPMusicPlayerApplicationController.applicationQueuePlayer()
                         myMediaPlayer.setQueue(with:query)
                         myMediaPlayer.play()
+                        self.player = myMediaPlayer
                     } else {
                         // Fallback on earlier versions
                     }
@@ -89,6 +91,9 @@ class MediaViewController: UIViewController, UICollectionViewDataSource {
             cell.imageView.image = artwork.image(at: CGSize(width: 160, height: 160))
         }
         return cell
+    }
+    @IBAction func stopPlayingPressed(_ sender: Any) {
+        player.stop()
     }
 }
 

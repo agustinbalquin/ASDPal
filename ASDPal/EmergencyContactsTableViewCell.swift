@@ -11,6 +11,7 @@ import Contacts
 
 @objc protocol EmergencyContactsTableViewCellDelegate {
     func callNumber(contactCell: EmergencyContactsTableViewCell)
+    func callNumberDemo(number: String)
 }
 
 
@@ -19,6 +20,7 @@ class EmergencyContactsTableViewCell: UITableViewCell {
     @IBOutlet weak var contactName: UILabel!
     
     var contact: CNContact?
+    var number: String?
     
     var delegate: EmergencyContactsTableViewCellDelegate?
     
@@ -34,7 +36,8 @@ class EmergencyContactsTableViewCell: UITableViewCell {
     }
 
     @IBAction func callButtonPressed(_ sender: Any) {
-        delegate!.callNumber(contactCell: self)
+        //delegate!.callNumber(contactCell: self)
+        delegate!.callNumberDemo(number: self.number!)
     }
     
 }

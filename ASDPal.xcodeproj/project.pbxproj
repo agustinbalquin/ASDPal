@@ -10,6 +10,7 @@
 		420AB8AA2040EE7E00AAA3B1 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420AB8A92040EE7E00AAA3B1 /* LogInViewController.swift */; };
 		420AB8AC20441CD200AAA3B1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420AB8AB20441CD200AAA3B1 /* HomeViewController.swift */; };
 		423426E8204D436F00F2F018 /* RecentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423426E7204D436F00F2F018 /* RecentCollectionViewCell.swift */; };
+		423426EA204DF38A00F2F018 /* LocationVCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423426E9204DF38A00F2F018 /* LocationVCard.swift */; };
 		42FE437B20383816006076B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE437A20383816006076B3 /* AppDelegate.swift */; };
 		42FE438020383816006076B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FE437E20383816006076B3 /* Main.storyboard */; };
 		42FE438320383816006076B3 /* ASDPal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42FE438120383816006076B3 /* ASDPal.xcdatamodeld */; };
@@ -26,6 +27,7 @@
 		420AB8A92040EE7E00AAA3B1 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		420AB8AB20441CD200AAA3B1 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		423426E7204D436F00F2F018 /* RecentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCollectionViewCell.swift; sourceTree = "<group>"; };
+		423426E9204DF38A00F2F018 /* LocationVCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVCard.swift; sourceTree = "<group>"; };
 		42FE437720383816006076B3 /* ASDPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ASDPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FE437A20383816006076B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42FE437F20383816006076B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				42FE438920383816006076B3 /* Info.plist */,
 				42FE438120383816006076B3 /* ASDPal.xcdatamodeld */,
 				42FE439D203C2473006076B3 /* Views */,
+				423426E9204DF38A00F2F018 /* LocationVCard.swift */,
 			);
 			path = ASDPal;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				42FE4396203C0A97006076B3 /* MediaViewController.swift in Sources */,
 				423426E8204D436F00F2F018 /* RecentCollectionViewCell.swift in Sources */,
 				420AB8AC20441CD200AAA3B1 /* HomeViewController.swift in Sources */,
+				423426EA204DF38A00F2F018 /* LocationVCard.swift in Sources */,
 				420AB8AA2040EE7E00AAA3B1 /* LogInViewController.swift in Sources */,
 				42FE437B20383816006076B3 /* AppDelegate.swift in Sources */,
 				42FE4390203910B3006076B3 /* EmergencyContactsViewController.swift in Sources */,

@@ -9,10 +9,17 @@
 import UIKit
 
 import Contacts
+import CoreLocation
+import MessageUI
 
-class EmergencyContactsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EmergencyContactsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate {
+ 
 
     @IBOutlet weak var tableView: UITableView!
+    
+    var location = CLLocation()
+    private var locman = CLLocationManager()
+    private var startTime: Date?
     
     var cnContacts = [CNContact]() {
         didSet {
@@ -20,19 +27,41 @@ class EmergencyContactsViewController: UIViewController, UITableViewDelegate, UI
         }
     }
     
-    var demoArrays = [(name: "Mom", number: "5625063648"),(name: "Dad", number: "5625063648"), (name: "Big Sister", number: "5625063648"), (name: "Teacher", number: "5625063648"), (name: "Aunt Janine", number: "5625063648"), (name: "Steve -Neighbor", number: "5625063648")]
+    var demoArrays = [(name: "Mom", number: "9099928405"),(name: "Dad", number: "9098393141"), (name: "Big Sister", number: "9258581118"), (name: "Teacher", number: "5625063648")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locman.delegate = self
+        locman.requestWhenInUseAuthorization()
+        locman.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locman.startUpdatingLocation()
+
         tableView.delegate = self
         tableView.dataSource = self
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    //Location Manager
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        location = locations.last!
+    }
+    
+    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.authorizedWhenInUse {
+            manager.startUpdatingLocation()
+        }
+    }
+    
+    // Message Compose Controller
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,6 +78,7 @@ class EmergencyContactsViewController: UIViewController, UITableViewDelegate, UI
         cell.delegate = self
         if !demoArrays.isEmpty {
             cell.contactName.text = demoArrays[indexPath.row].name
+            cell.number = demoArrays[indexPath.row].number
         } else {
             if !cnContacts.isEmpty {
                 let contact = cnContacts[indexPath.row]
@@ -106,7 +136,20 @@ class EmergencyContactsViewController: UIViewController, UITableViewDelegate, UI
         let url: NSURL = URL(string: "TEL://\(number)")! as NSURL
         UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
     }
-    
+    @IBAction func helpPressed(_ sender: Any) {
+        
+        let composeVC = MFMessageComposeViewController()
+        composeVC.messageComposeDelegate = self
+        
+        // Configure the fields of the interface.
+        composeVC.recipients =  ["6265607761"]  //demoArrays.map{$0.number}
+        composeVC.body = "I need Help!"
+        let tempCoordinate = locman.location?.coordinate
+        composeVC.addAttachmentURL(locationVCardURLFromCoordinate(coordinate: location.coordinate)! as URL, withAlternateFilename: "vCard.loc.vcf")
+        
+        self.present(composeVC, animated: true, completion: nil)
+        
+    }
 }
 
 extension EmergencyContactsViewController: EmergencyContactsTableViewCellDelegate {
@@ -116,5 +159,9 @@ extension EmergencyContactsViewController: EmergencyContactsTableViewCellDelegat
         let cleanedArr =  text?.components(separatedBy: charSet)
         let cleanedString = cleanedArr?.joined()
         makeCall(number: cleanedString!)
+    }
+    
+    func callNumberDemo(number:String) {
+        makeCall(number: number)
     }
 }

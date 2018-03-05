@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Need to access user&apos;s location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Need to access user&apos;s location</string>
 	<key>NSContactsUsageDescription</key>
 	<string>Need access to fetch contacts</string>
 	<key>NSAppleMusicUsageDescription</key>
