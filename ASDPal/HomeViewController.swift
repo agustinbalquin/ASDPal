@@ -11,10 +11,20 @@ import Parse
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var descriptionView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        logoutButton.layer.cornerRadius = logoutButton.frame.size.height/2
+        logoutButton.layer.borderWidth = 1
+        logoutButton.layer.borderColor = UIColor.clear.cgColor
+        
+        descriptionView.layer.cornerRadius = 10
+        descriptionView.layer.borderWidth = 1
+        descriptionView.layer.borderColor = UIColor.clear.cgColor
+        
     }
 
     override func didReceiveMemoryWarning() {
