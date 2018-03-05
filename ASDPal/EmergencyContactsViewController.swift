@@ -34,11 +34,13 @@ class EmergencyContactsViewController: UIViewController, UITableViewDelegate, UI
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10;
+        return cnContacts.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "emergencyCell", for: indexPath) as! EmergencyContactsTableViewCell
+        
+        cell.delegate = self
         
         if !cnContacts.isEmpty {
             let contact = cnContacts[indexPath.row]
@@ -49,9 +51,6 @@ class EmergencyContactsViewController: UIViewController, UITableViewDelegate, UI
         } else {
             cell.contactName.text = "No Name"
         }
-        
-        
-        
         
         return cell
     }
@@ -93,4 +92,20 @@ class EmergencyContactsViewController: UIViewController, UITableViewDelegate, UI
         
     }
     
+    func makeCall(number: String)  {
+        print("number is: \(number)")
+        let url: NSURL = URL(string: "TEL://\(number)")! as NSURL
+        UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+    }
+    
+}
+
+extension EmergencyContactsViewController: EmergencyContactsTableViewCellDelegate {
+    func callNumber(contactCell: EmergencyContactsTableViewCell) {
+        let text = contactCell.contact?.phoneNumbers[0].value.stringValue
+        let charSet = NSCharacterSet(charactersIn: "1234567890").inverted
+        let cleanedArr =  text?.components(separatedBy: charSet)
+        let cleanedString = cleanedArr?.joined()
+        makeCall(number: cleanedString!)
+    }
 }

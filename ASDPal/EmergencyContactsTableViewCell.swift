@@ -9,11 +9,18 @@
 import UIKit
 import Contacts
 
+@objc protocol EmergencyContactsTableViewCellDelegate {
+    func callNumber(contactCell: EmergencyContactsTableViewCell)
+}
+
+
 class EmergencyContactsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var contactName: UILabel!
     
     var contact: CNContact?
+    
+    var delegate: EmergencyContactsTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,4 +33,8 @@ class EmergencyContactsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func callButtonPressed(_ sender: Any) {
+        delegate!.callNumber(contactCell: self)
+    }
+    
 }
