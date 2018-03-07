@@ -142,8 +142,8 @@ class EmergencyContactsViewController: UIViewController, UITableViewDelegate, UI
         composeVC.messageComposeDelegate = self
         
         // Configure the fields of the interface.
-        composeVC.recipients =  ["6265607761"]  //demoArrays.map{$0.number}
-        composeVC.body = "I need Help!"
+        composeVC.recipients = demoArrays.map{$0.number}
+        composeVC.body = "I need Help! From Bubble App"
         let tempCoordinate = locman.location?.coordinate
         composeVC.addAttachmentURL(locationVCardURLFromCoordinate(coordinate: location.coordinate)! as URL, withAlternateFilename: "vCard.loc.vcf")
         
